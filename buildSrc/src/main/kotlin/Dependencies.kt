@@ -6,8 +6,8 @@ import org.gradle.api.JavaVersion
 
 object Config {
     const val minSdkVersion = 21
-    const val compileSdkVersion = 30
-    const val targetSdkVersion = 30
+    const val compileSdkVersion = 31
+    const val targetSdkVersion = 31
     const val versionName = "1.0"
     const val versionCode = 5
     val javaVersion = JavaVersion.VERSION_11
@@ -43,8 +43,8 @@ object Plugins {
 object Kotlin {
 
     object Versions {
-        const val kotlin = "1.4.21"
-        const val coroutines = "1.4.2"
+        const val kotlin = "1.7.10"
+        const val coroutines = "1.6.4"
     }
 
     const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
@@ -59,14 +59,14 @@ object Kotlin {
 
 object AndroidX : Libraries {
     private object Versions {
-        const val androidx_core = "1.3.2"
-        const val appCompat = "1.2.0"
-        const val lifeCycle = "2.3.0-alpha03"
-        const val preferences = "1.1.1"
+        const val androidx_core = "1.7.0"
+        const val appCompat = "1.3.1"
+        const val lifeCycle = "2.5.1"
+        const val preferences = "1.2.0"
         const val legacy = "1.0.0"
-        const val work = "2.5.0"
+        const val work = "2.7.1"
         const val paging = "2.1.2"
-        const val fragment = "1.3.0-alpha06"
+        const val fragment = "1.5.2"
 
         const val archCoreTesting = "2.1.0"
         const val coreKtxTest = "1.3.0"
@@ -102,7 +102,7 @@ object AndroidX : Libraries {
 object Dagger : Libraries {
 
     private object Versions {
-        const val hilt = "2.40.1"
+        const val hilt = "2.43.2"
     }
 
     const val daggerHilt = "com.google.dagger:hilt-android:${Versions.hilt}"
@@ -138,7 +138,7 @@ object Network : Libraries {
 object Database : Libraries {
 
     object Versions {
-        const val room = "2.2.6"
+        const val room = "2.4.3"
     }
 
     const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"

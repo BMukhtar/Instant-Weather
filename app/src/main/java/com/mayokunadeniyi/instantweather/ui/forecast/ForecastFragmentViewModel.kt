@@ -11,6 +11,7 @@ import com.mayokunadeniyi.instantweather.utils.asLiveData
 import com.mayokunadeniyi.instantweather.utils.convertKelvinToCelsius
 import com.mayokunadeniyi.instantweather.utils.formatDate
 import com.shrikanthravi.collapsiblecalendarview.data.Day
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -20,7 +21,7 @@ import javax.inject.Inject
 /**
  * Created by Mayokun Adeniyi on 28/02/2020.
  */
-
+@HiltViewModel
 class ForecastFragmentViewModel @Inject constructor(
     private val repository: WeatherRepository,
     @DefaultDispatcher private val defaultDispatcher: CoroutineDispatcher
@@ -53,6 +54,7 @@ class ForecastFragmentViewModel @Inject constructor(
                     }
                 }
                 is Result.Loading -> _isLoading.postValue(true)
+                is Result.Error -> {}
             }
         }
     }

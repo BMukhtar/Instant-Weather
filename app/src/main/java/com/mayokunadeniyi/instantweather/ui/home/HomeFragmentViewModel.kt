@@ -11,6 +11,7 @@ import com.mayokunadeniyi.instantweather.utils.LocationLiveData
 import com.mayokunadeniyi.instantweather.utils.Result
 import com.mayokunadeniyi.instantweather.utils.asLiveData
 import com.mayokunadeniyi.instantweather.utils.convertKelvinToCelsius
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -19,6 +20,7 @@ import javax.inject.Inject
 /**
  * Created by Mayokun Adeniyi on 2020-01-25.
  */
+@HiltViewModel
 class HomeFragmentViewModel @Inject constructor(
     private val repository: WeatherRepository
 ) :

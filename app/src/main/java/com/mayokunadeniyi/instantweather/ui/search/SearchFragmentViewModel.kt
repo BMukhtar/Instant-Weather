@@ -21,6 +21,7 @@ import com.mayokunadeniyi.instantweather.data.model.Weather
 import com.mayokunadeniyi.instantweather.data.source.repository.WeatherRepository
 import com.mayokunadeniyi.instantweather.utils.Result
 import com.mayokunadeniyi.instantweather.utils.asLiveData
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.jsonPrimitive
 import timber.log.Timber
@@ -29,7 +30,7 @@ import javax.inject.Inject
 /**
  * Created by Mayokun Adeniyi on 27/04/2020.
  */
-
+@HiltViewModel
 class SearchFragmentViewModel @Inject constructor(private val repository: WeatherRepository) :
     ViewModel() {
 
@@ -96,6 +97,7 @@ class SearchFragmentViewModel @Inject constructor(private val repository: Weathe
                     _isLoading.value = false
                     _dataFetchState.value = false
                 }
+                Result.Loading -> {}
             }
         }
     }

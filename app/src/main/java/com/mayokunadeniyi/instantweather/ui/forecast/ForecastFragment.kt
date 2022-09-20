@@ -21,7 +21,7 @@ import javax.inject.Inject
 class ForecastFragment : BaseFragment(), ForecastOnClickListener {
     private lateinit var binding: FragmentForecastBinding
 
-    private val viewModel by viewModels<ForecastFragmentViewModel> { viewModelFactoryProvider }
+    private val viewModel: ForecastFragmentViewModel by viewModels()
 
     private val weatherForecastAdapter by lazy { WeatherForecastAdapter(this) }
 
@@ -32,7 +32,7 @@ class ForecastFragment : BaseFragment(), ForecastOnClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentForecastBinding.inflate(layoutInflater)
         return binding.root
     }

@@ -1,8 +1,6 @@
 package com.mayokunadeniyi.instantweather.di.module
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.mayokunadeniyi.instantweather.ViewModelFactory
 import com.mayokunadeniyi.instantweather.di.key.ViewModelKey
 import com.mayokunadeniyi.instantweather.ui.forecast.ForecastFragmentViewModel
 import com.mayokunadeniyi.instantweather.ui.home.HomeFragmentViewModel
@@ -20,9 +18,6 @@ import dagger.multibindings.IntoMap
 @InstallIn(SingletonComponent::class)
 @Module
 abstract class ViewModelModule {
-
-    @Binds
-    abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory
 
     @IntoMap
     @Binds

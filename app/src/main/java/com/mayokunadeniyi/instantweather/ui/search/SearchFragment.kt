@@ -29,7 +29,7 @@ class SearchFragment : BaseFragment(), SearchResultAdapter.OnItemClickedListener
     private lateinit var binding: FragmentSearchBinding
     private lateinit var searchDetailBinding: FragmentSearchDetailBinding
     private val bottomSheetDialog by lazy { BaseBottomSheetDialog(requireActivity(), R.style.AppBottomSheetDialogTheme) }
-    private val viewModel by viewModels<SearchFragmentViewModel> { viewModelFactoryProvider }
+    private val viewModel: SearchFragmentViewModel by viewModels()
     private val searchResultAdapter by lazy { SearchResultAdapter(this) }
     private val connection = ConnectionHandler()
     private lateinit var searchBoxView: SearchBoxViewAppCompat
@@ -38,7 +38,7 @@ class SearchFragment : BaseFragment(), SearchResultAdapter.OnItemClickedListener
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSearchBinding.inflate(layoutInflater)
         searchDetailBinding = FragmentSearchDetailBinding.inflate(layoutInflater)
         return binding.root
